@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>myFridge - API Referenz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/util.css">
+
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#">Einführung</a>
+	          </li>
+	          <li>
+	              <a href="#errors">Errors</a>
+	          </li>
+	          <li>
+              <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> User</a>
+              <ul class="collapse list-unstyled" id="userSubmenu">
+                <li>
+                  <a href="#allgemeinUser">Allgemein</a>
+              </li>
+                <li>
+                    <a href="#userObject">The User Object</a>
+                </li>
+                <li>
+                    <a href="#createUser">Create a User</a>
+                </li>
+                <li>
+                    <a href="#retrieveUser">Retrieve a User</a>
+                </li>
+                <li>
+                  <a href="#updateUser">Update a User</a>
+              </li>
+              <li>
+                <a href="#deleteUser">Delete a User</a>
+            </li>
+            <li>
+              <a href="#listUsers">List all Users</a>
+            </li>
+              </ul>
+	          </li>
+
+            <li>
+              <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Product</a>
+              <ul class="collapse list-unstyled" id="productSubmenu">
+                <li>
+                    <a href="#">The Product Object</a>
+                </li>
+                <li>
+                    <a href="#">Create a Product</a>
+                </li>
+                <li>
+                    <a href="#">Retrieve a Product</a>
+                </li>
+                <li>
+                  <a href="#">Update a Product</a>
+              </li>
+              <li>
+                <a href="#">Delete a Product</a>
+            </li>
+            <li>
+              <a href="#">List all Products</a>
+            </li>
+              </ul>
+	          </li>
+            <li>
+              <a href="#fridgeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Fridge</a>
+              <ul class="collapse list-unstyled" id="fridgeSubmenu">
+                <li>
+                    <a href="#">The Fridge Object</a>
+                </li>
+                <li>
+                    <a href="#">Create a Fridge</a>
+                </li>
+                <li>
+                    <a href="#">Retrieve a Fridge</a>
+                </li>
+                <li>
+                  <a href="#">Update a Fridge</a>
+              </li>
+              <li>
+                <a href="#">Delete a Fridge</a>
+            </li>
+            <li>
+              <a href="#">List all Fridges</a>
+            </li>
+              </ul>
+	          </li>
+
+            <li>
+              <a href="#rezeptSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Recipe</a>
+              <ul class="collapse list-unstyled" id="rezeptSubmenu">
+                <li>
+                    <a href="#">The Recipe Object</a>
+                </li>
+                <li>
+                    <a href="#">Create a Recipe</a>
+                </li>
+                <li>
+                    <a href="#">Retrieve a Recipe</a>
+                </li>
+                <li>
+                  <a href="#">Update a Recipe</a>
+              </li>
+              <li>
+                <a href="#">Delete a Recipe</a>
+            </li>
+            <li>
+              <a href="#">List all Recipes</a>
+            </li>
+              </ul>
+	          </li>
+
+	          <li>
+              <a href="#">Contact</a>
+	          </li>
+            <li>
+              
+            </li>
+	       
+         
+            <p id="sidebar-footer">
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <a href=""> myFridge </a>
+            </p>
+           </ul>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kontakt</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        
+          <h2 class="mb-4 content-block">API Referenz</h2>
+          <p class="content-block">Die myFridge-API ist um <a href="https://de.wikipedia.org/wiki/Representational_State_Transfer">REST </a>herum organisiert. Unsere API hat vorhersehbare ressourcenorientierte URLs, gibt JSON-codierte Antworten zurück und verwendet standardmäßige HTTP-Antwortcodes.</p>
+          <h2 class="mb-4"> </h2>
+          <table class ="content-dark">
+            <th> BASE URL </th>
+            <tr> <p> <td> https://myfridge-backend.herokuapp.com/ </td></p></tr>
+          </table>
+
+          <br>
+          <br>
+          <hr>
+          <br>
+          <br>
+          <h2 class="mb-4 content-block"> <div id="errors">Errors</div></h2>
+          <p> myFridge verwendet herkömmliche HTTP-Antwortcodes, um den Erfolg oder Misserfolg einer API-Anfrage anzuzeigen. Im Allgemeinen: Codes im 2xx-Bereich zeigen einen Erfolg an. Codes im 4xx-Bereich zeigen einen Fehler an, der angesichts der bereitgestellten Informationen fehlgeschlagen ist (z. B. ein erforderlicher Parameter wurde ausgelassen, eine Aufladung ist fehlgeschlagen usw.). Codes im 5xx-Bereich weisen auf einen Fehler mit den Servern von myFridge hin (diese sind selten).</p>
+          <p>  Einige 4xx-Fehler, die programmatisch behandelt werden können (z. B. eine Karte wurde abgelehnt), enthalten einen Fehlercode, der den gemeldeten Fehler kurz erklärt.</p>
+          <br>
+          
+          <table class="content-light">
+            <th colspan="2"> HTTP STATUS CODE SUMMARY </th>
+          <tr> <p> <td class="left-col"><b> 200 - OK </b></td><td class="right-col">Everything worked as expected.</td> </p> </tr>
+          <tr> <p> <td class="left-col"><b> 400 - Bad Request</b></td>	<td class="right-col">The request was unacceptable, often due to missing a required parameter.</td> </tr>
+          <tr> <p> <td class="left-col"><b>401 - Unauthorized</b></td><td class="right-col">	No valid API key provided.</td> </tr>
+          <tr> <p> <td class="left-col"><b> 402 - Request Failed	</b></td><td class="right-col">The parameters were valid but the request failed.</td> </tr>
+          <tr> <p> <td class="left-col"><b> 403 - Forbidden	</b></td><td class="right-col">The API key doesn't have permissions to perform the request.</td> </tr>
+          <tr> <p> <td class="left-col"><b> 404 - Not Found	</b></td><td class="right-col">The requested resource doesn't exist.</td> </tr>
+          <tr> <p> <td class="left-col"><b> 409 - Conflict</b></td><td class="right-col">The request conflicts with another request (perhaps due to using the same idempotent key).</td>	 </tr>
+          <tr> <p> <td class="left-col"><b>429 - Too Many Requests</b></td><td class="right-col">Too many requests hit the API too quickly. We recommend an exponential backoff of your requests. </td>	</tr>
+          <tr> <p> <td class="left-col"><b>500, 502, 503, 504 - Server Errors	</b></td><td class="right-col">Something went wrong on myFridge's end. (These are rare.)</td> </tr>
+          </table>
+          <br>
+          <br>
+          <hr>
+          <br>
+          <br>
+
+          <h2 class="mb-4 content-block"><div id="allgemeinUser"> User </div></h2>
+          <p class="content-block"><code>User</code> Objekte repräsentieren einen Nutzer in der myFridge-App. Mit der API können Sie Ihre User erstellen, löschen und aktualisieren. Sie können sowohl einzelne User als auch eine Liste aller Ihrer User abrufen.</p>
+          <h2 class="mb-4"> </h2>
+          <table class ="content-light">
+            <th> ENDPOINTS </th>
+            <tr> <p> <td> <div class="get-string endpoint"> GET </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/users</code></td></p></tr>
+            <tr> <p> <td> <div class="get-string endpoint"> GET </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/user/{user_id} </code> </td></p></tr>
+            <tr> <p> <td> <div class="post-string endpoint"> POST </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/user/{user_id}/{vorname}/{nachname}/{passwort}/{email}</code> </td></p></tr>
+            <tr> <p> <td> <div class="put-string endpoint"> PUT </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/user/{user_id}/{vorname}/{nachname}/{passwort}/{email} </code></td></p></tr>
+            <tr> <p> <td> <div class="delete-string endpoint"> DELETE </div>  &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/user/{user_id}</code> </td></p></tr>
+          </table>
+          <br>
+          <br>
+          <hr>
+          <br>
+          <br>
+          <h2 class="mb-4 content-block"> <div id="userObject">The User Object </div></h2>
+          <table class ="content-light">
+            <th> THE USER OBJECT </th>
+            <tr> <p> <td><code class="inside-code"> { <br> &nbsp;&nbsp;&nbsp; "id" : { <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "$oid": "603a27096136a950a84486c5" <br> &nbsp;&nbsp;&nbsp; }, <br> &nbsp;&nbsp;&nbsp; "vorname" : "Max", <br> &nbsp;&nbsp;&nbsp; "nachname" : "Mustermann", <br> &nbsp;&nbsp;&nbsp; "email" : "max.mustermann@mail.de", <br> &nbsp;&nbsp;&nbsp; "passwort" : "shj2z384fh2937428hf" <br>  }  </code></td> </p></tr>
+          </table>
+          <br>
+          <br>
+          
+          <h4>Attribute</h4>
+          <br>
+          <br>
+          <p> <code> id </code> <code class="type-code"> hash</code></p> 
+            <h5> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Kinder Attribute</h5> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code> $oid </code> <code class="type-code"> 12-byte or 24 hash-character</code>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eindeutiger Bezeichner für das Objekt. (ObjectID)
+          
+          <hr>
+          
+          <code> vorname </code> <code class="type-code"> string</code>
+          <br>
+          <br>
+          <p> Vorname des Users </p>
+    
+          <hr>
+
+          <code> nachname </code> <code class="type-code"> string</code>
+          <br>
+          <br>
+          <p> Nachname des Users </p>
+
+          <hr>
+
+          <code> passwort </code> <code class="type-code"> string</code>
+          <br>
+          <br>
+          <p> Passwort des Users. Das Passwort wird bei Erstellung des Objekt gehasht. </p>
+
+          <hr>
+
+          <code> email </code> <code class="type-code"> string</code>
+          <br>
+          <br>
+          <p> E-Mail Adresse des Users </p>
+          <br>
+          <br>
+          <hr>
+          <br>
+          <br>
+          <h2 class="mb-4 content-block"> <div id="createUser"> Create a User </div></h2>
+         
+          <p> Um einen Account/User zu erstellen, können Sie ein <code>User</code>-Object erstellen.</p>
+          <br>
+          <h4>Parameter</h4>
+          <p> <code class="parameter-code"> vorname </code> <code class="parameter-code required"> required</code></p>
+          <p> Der Vorname des Users.</p>
+          <hr>
+          <p> <code class="parameter-code"> nachname </code> <code class="parameter-code required"> required</code></p>
+          <p> Der Nachname des Users.</p>
+          <hr>
+          <p> <code class="parameter-code"> passwort </code> <code class="parameter-code required"> required</code></p>
+          <p> Das Passwort, welches bei der Registrierung genutzt werden kann.</p>
+          <hr>
+          <p> <code class="parameter-code"> email </code> <code class="parameter-code required"> required</code></p>
+          <p> Die E-Mail Adresse des Users. Es wird nicht explizit geprüft, ob es sich tatsächlich um eine E-Mail Adresse handelt.</p>
+          <br>
+          <br>
+          <hr>
+          <br>
+          <br>
+          
+
+          <h2 class="mb-4 content-block"> <div id="retrieveUser">Retrieve a User</div></h2>
+         
+          <p> Um einen User zu bekommen, können Sie nach einem bestimmten <code>User</code>-Object suchen.</p>
+          <br>
+          <h4>Parameter</h4>
+          <p> <code class="parameter-code"> $oid </code> <code class="parameter-code required"> required</code></p>
+          <p> Die ObjectID des Users.</p>
+          <br>
+          <br>
+          <hr>
+          <br>
+          <br>
+          <h2 class="mb-4 content-block"><div id="updateUser">Update a User</div></h2>
+         
+          <p> Um bestimmte Daten eines Users ändern zu können, können Sie bestimmte Attribute des jeweiligen <code>User</code>-Objects updaten. Auch wenn nicht alle Daten zeitgleich geändert werden, müssen alle Attribute mitgegeben werden.</p>
+          <br>
+          <h4>Parameter</h4>
+          <p> <code class="parameter-code"> $oid </code> <code class="parameter-code required"> required</code></p>
+          <p> Der User, bei der die Daten geändert werden sollen.</p>
+          <hr>
+          <p> <code class="parameter-code"> vorname </code> <code class="parameter-code required"> required</code></p>
+          <p> Der neue Vorname des Users.</p>
+          <hr>
+          <p> <code class="parameter-code"> nachname </code> <code class="parameter-code required"> required</code></p>
+          <p> Der neue Nachname des Users.</p>
+          <hr>
+          <p> <code class="parameter-code"> passwort </code> <code class="parameter-code required"> required</code></p>
+          <p> Das neue Passwort.</p>
+          <hr>
+          <p> <code class="parameter-code"> email </code> <code class="parameter-code required"> required</code></p>
+          <p> Die neue E-Mail Adresse des Users.</p>
+
+          <br>
+          <br>
+          <hr>
+          <br>
+          <br>
+          
+
+          <h2 class="mb-4 content-block"><div id="deleteUser">Delete a User</div></h2>
+         
+          <p> Um einen bestimmten User zu löschen, können Sie nach einem bestimmten <code>User</code>-Object suchen und ihn dadurch löschen. Alle Attribute (inklusive der <code class="parameter-code"> $oid</code>) werden gelöscht.</p>
+          <br>
+          <h4>Parameter</h4>
+          <p> <code class="parameter-code"> $oid </code> <code class="parameter-code required"> required</code></p>
+          <p> Der User, welcher gelöscht wird.</p>
+          <br>
+          <br>
+          <hr>
+          <br>
+          <br>
+          <h2 class="mb-4 content-block"><div id="listUsers">List all Users</div></h2>
+         
+          <p> Gibt eine Liste der User zurück, die Sie zuvor erstellt haben. Die User werden in sortierter Reihenfolge zurückgegeben, wobei die neuesten User zuerst angezeigt werden.</p>
+          <br>
+          <h4>Parameter</h4>
+          <p> Keine Parameter notwendig.</p>
+          <br>
+          <br>
+          <hr>
+          <br>
+          <br>
+          
+
+
+
+
+
+
+        <!-- HIER WIRD WEITERGEMACHT-->
+
+
+        <h2 class="mb-4 content-block"><div id="XXX"> XXX </div></h2>
+        <p class="content-block"><code>XXX</code> Objekte repräsentieren ein XXX in der myFridge-App. Mit der API können Sie Ihre XXX erstellen, löschen und aktualisieren. Sie können sowohl einzelne XXX als auch eine Liste aller Ihrer XXX abrufen.</p>
+        <h2 class="mb-4"> </h2>
+        <table class ="content-light">
+          <th> ENDPOINTS </th>
+          <tr> <p> <td> <div class="get-string endpoint"> HTTP-METHOD </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/XXX/{XXX} </code> </td></p></tr>
+          <tr> <p> <td> <div class="post-string endpoint"> HTTP-METHOD </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/XXX/{XXX}/{XXX}</code> </td></p></tr>
+          <tr> <p> <td> <div class="delete-string endpoint"> HTTP-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/XXX/{XXX}</code> </td></p></tr>
+        </table>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2 class="mb-4 content-block"> <div id="XXX">The XXX Object </div></h2>
+        <table class ="content-light">
+          <th> THE XXX OBJECT </th>
+          <tr> <p> <td><code class="inside-code"> { <br> &nbsp;&nbsp;&nbsp; "id" : { <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "$oid": "603a27096136a950a84486c5" <br> &nbsp;&nbsp;&nbsp; }, <br> &nbsp;&nbsp;&nbsp; "XXX" : "XXX", <br> &nbsp;&nbsp;&nbsp; "XXX" : "XXX", <br> &nbsp;&nbsp;&nbsp; "XXX" : "XXX", <br> &nbsp;&nbsp;&nbsp; "XXX" : "XXX" <br>  }  </code></td> </p></tr>
+        </table>
+        <br>
+        <br>
+        
+        <h4>Attribute</h4>
+        <br>
+        <br>
+        <p> <code> id </code> <code class="type-code"> hash</code></p> 
+          <h5> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Kinder Attribute</h5> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code> $oid </code> <code class="type-code"> 12-byte or 24 hash-character</code>
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Eindeutiger Bezeichner für das Objekt. (ObjectID)
+        
+        <hr>
+        
+        <code> XXX </code> <code class="type-code"> string/int etc.</code>
+        <br>
+        <br>
+        <p> BESCHREIBUNG </p>
+  
+        <hr>
+
+        <code> XXX </code> <code class="type-code"> string/int etc.</code>
+        <br>
+        <br>
+        <p> BESCHREIBUNG </p>
+        <hr>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2 class="mb-4 content-block"> <div id="XXX"> Create a XXX </div></h2>
+       
+        <p> Um einen XXX zu erstellen, können Sie ein <code>XXX</code>-Object erstellen.</p>
+        <br>
+        <h4>Parameter</h4>
+        <p> <code class="parameter-code"> XXX </code> <code class="parameter-code required"> required</code></p>
+        <p> XXX</p>
+        <hr>
+        <p> <code class="parameter-code"> XXX </code> <code class="parameter-code required"> required</code></p>
+        <p>XXX</p>
+        <hr>
+        <p> <code class="parameter-code"> XXX </code> <code class="parameter-code required"> required</code></p>
+        <p> XXX</p>
+        <hr>
+        <p> <code class="parameter-code"> XXX </code> <code class="parameter-code required"> required</code></p>
+        <p> XXX</p>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        
+        
+
+          
+
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
