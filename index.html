@@ -210,8 +210,8 @@
             <th> ENDPOINTS </th>
             <tr> <p> <td> <div class="get-string endpoint"> GET </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/users</code></td></p></tr>
             <tr> <p> <td> <div class="get-string endpoint"> GET </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/user/{user_id} </code> </td></p></tr>
-            <tr> <p> <td> <div class="post-string endpoint"> POST </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/user/{user_id}/{vorname}/{nachname}/{passwort}/{email}</code> </td></p></tr>
-            <tr> <p> <td> <div class="put-string endpoint"> PUT </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/user/{user_id}/{vorname}/{nachname}/{passwort}/{email} </code></td></p></tr>
+            <tr> <p> <td> <div class="post-string endpoint"> POST </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/user</code> </td></p></tr>
+            <tr> <p> <td> <div class="put-string endpoint"> PUT </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/user/{user_id} </code></td></p></tr>
             <tr> <p> <td> <div class="delete-string endpoint"> DELETE </div>  &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/user/{user_id}</code> </td></p></tr>
           </table>
           <br>
@@ -222,7 +222,7 @@
           <h2 class="mb-4 content-block"> <div id="userObject">The User Object </div></h2>
           <table class ="content-light">
             <th> THE USER OBJECT </th>
-            <tr> <p> <td><code class="inside-code"> { <br> &nbsp;&nbsp;&nbsp; "id" : { <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "$oid": "603a27096136a950a84486c5" <br> &nbsp;&nbsp;&nbsp; }, <br> &nbsp;&nbsp;&nbsp; "vorname" : "Max", <br> &nbsp;&nbsp;&nbsp; "nachname" : "Mustermann", <br> &nbsp;&nbsp;&nbsp; "email" : "max.mustermann@mail.de", <br> &nbsp;&nbsp;&nbsp; "passwort" : "shj2z384fh2937428hf" <br>  }  </code></td> </p></tr>
+            <tr> <p> <td><code class="inside-code"> { <br> &nbsp;&nbsp;&nbsp; "id" : { <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "$oid": "603a27096136a950a84486c5" <br> &nbsp;&nbsp;&nbsp; }, <br> &nbsp;&nbsp;&nbsp; "vorname" : "Max", <br> &nbsp;&nbsp;&nbsp; "nachname" : "Mustermann", <br> &nbsp;&nbsp;&nbsp;"passwort" : "shj2z384fh2937428hf" , <br> &nbsp;&nbsp;&nbsp; "email" : "max.mustermann@mail.de" <br>  }  </code></td> </p></tr>
           </table>
           <br>
           <br>
