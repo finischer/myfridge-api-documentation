@@ -124,6 +124,16 @@
               </ul>
 	          </li>
 
+            <li>
+              <a href="#rezeptSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Recipe</a>
+              <ul class="collapse list-unstyled" id="rezeptSubmenu">
+                <li>
+                    <a href="#allgemeinSearch">Allgemein</a>
+                </li>
+               
+              </ul>
+	          </li>
+
 	          <li>
               <a href="#">Contact</a>
 	          </li>
@@ -169,6 +179,7 @@
         
           <h2 class="mb-4 content-block">API Referenz</h2>
           <p class="content-block">Die myFridge-API ist um <a href="https://de.wikipedia.org/wiki/Representational_State_Transfer">REST </a>herum organisiert. Unsere API hat vorhersehbare ressourcenorientierte URLs, gibt JSON-codierte Antworten zurück und verwendet standardmäßige HTTP-Antwortcodes.</p>
+          <p class="conten-block"> Die API empfängt Daten im JSON-Format und verarbeitet die Anfrage anschließend. Je nach Anfrage, müssen bestimmte Parameter</p>
           <h2 class="mb-4"> </h2>
           <table class ="content-dark">
             <th> BASE URL </th>
@@ -353,6 +364,30 @@
           <hr>
           <br>
           <br>
+
+          <h2 class="mb-4 content-block"><div id="allgemeinSearch"> Searchfunction </div></h2>
+        <p class="content-block"> Die Suchfunktion ermöglicht es dem Anwender, nach bestimmten Daten zu suchen. Außerdem werden ihm Suchbegriffe vorgeschlagen.</p>
+        <h2 class="mb-4"> </h2>
+        <table class ="content-light">
+          <th> ENDPOINTS </th>
+          <tr> <p> <td> <div class="get-string endpoint"> GET </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/search/{search_string} </code> </td></p></tr>
+         
+        </table>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        
+        <h4>Parameter</h4>
+        <p> <code class="parameter-code"> search_string </code> <code class="parameter-code required"> required</code></p>
+        <p> Der Suchbegriff, der vom User eingegeben wird.</p>
+        
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
           
 
 
