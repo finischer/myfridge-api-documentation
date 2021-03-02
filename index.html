@@ -52,6 +52,24 @@
             </li>
               </ul>
 	          </li>
+
+            <li>
+              <a href="#anmeldungSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> Anmeldung</a>
+              <ul class="collapse list-unstyled" id="anmeldungSubmenu">
+                <li>
+                  <a href="#anmeldungAllgemein">Allgemein</a>
+              </li>
+                <li>
+                    <a href="#signup">Signup</a>
+                </li>
+                <li>
+                    <a href="#login">Login </a>
+                </li>
+                <li>
+                    <a href="#logout">Logout</a>
+                </li>
+              </ul>
+	          </li>
 <!-- 
             <li>
               <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Product</a>
@@ -221,7 +239,6 @@
             <th> ENDPOINTS </th>
             <tr> <p> <td> <div class="get-string endpoint"> GET </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/users</code></td></p></tr>
             <tr> <p> <td> <div class="get-string endpoint"> GET </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/user/{user_id} </code> </td></p></tr>
-            <tr> <p> <td> <div class="post-string endpoint"> POST </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/user</code> </td></p></tr>
             <tr> <p> <td> <div class="put-string endpoint"> PUT </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/user/{user_id} </code></td></p></tr>
             <tr> <p> <td> <div class="delete-string endpoint"> DELETE </div>  &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/user/{user_id}</code> </td></p></tr>
           </table>
@@ -282,19 +299,8 @@
           <h2 class="mb-4 content-block"> <div id="createUser"> Create a User </div></h2>
          
           <p> Um einen Account/User zu erstellen, können Sie ein <code>User</code>-Object erstellen.</p>
-          <br>
-          <h4>Parameter</h4>
-          <p> <code class="parameter-code"> vorname </code> <code class="parameter-code required"> required</code></p>
-          <p> Der Vorname des Users.</p>
-          <hr>
-          <p> <code class="parameter-code"> nachname </code> <code class="parameter-code required"> required</code></p>
-          <p> Der Nachname des Users.</p>
-          <hr>
-          <p> <code class="parameter-code"> passwort </code> <code class="parameter-code required"> required</code></p>
-          <p> Das Passwort, welches bei der Registrierung genutzt werden kann.</p>
-          <hr>
-          <p> <code class="parameter-code"> email </code> <code class="parameter-code required"> required</code></p>
-          <p> Die E-Mail Adresse des Users. Es wird nicht explizit geprüft, ob es sich tatsächlich um eine E-Mail Adresse handelt.</p>
+          <p> Dazu schauen Sie sie sich bitte die <a href="#signup">Signup-API</a> an</p>
+
           <br>
           <br>
           <hr>
@@ -383,6 +389,86 @@
         <p> <code class="parameter-code"> search_string </code> <code class="parameter-code required"> required</code></p>
         <p> Der Suchbegriff, der vom User eingegeben wird.</p>
         
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2 class="mb-4 content-block"><div id="anmeldungAllgemein"> Allgemein </div></h2>
+        <p class="content-block"> Die "Session"-Logik besteht darin, dass für einen User, ein Token generiert wird, der für 30 Minuten gültig ist. </p>
+        <p class="content-block"> Dieser wird bei jeder Abfrage mitgegeben, um Funktionen nutzen zu können, die nur beim Status "eingeloggt" möglich sind.</p>
+
+        <h2 class="mb-4"> </h2>
+        <table class ="content-light">
+          <th> ENDPOINTS </th>
+          <tr> <p> <td> <div class="post-string endpoint"> POST </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/registration </code> </td></p></tr>
+          <tr> <p> <td> <div class="post-string endpoint"> POST </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/login</code> </td></p></tr>
+          <tr> <p> <td> <div class="post-string endpoint"> POST </div>  &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/logout</code> </td></p></tr>
+        </table>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2 class="mb-4 content-block"> <div id="signup">Signup </div></h2>
+        <p class="content-block"> Bei der Registrierung wird ein neues <code>User</code>-Objekt erstellt. Daher müssen die folgende Attribute im JSON-Format mitgegeben werden.</p>
+
+        <br>
+        <br>
+        
+        <h4>Attribute</h4>
+        <br>
+        <br>
+        <p> <code> vorname </code> <code class="type-code"> string</code></p>
+        <hr>
+        <p> Der Vorname des neuen Users. </p>
+
+        <code> nachname </code> <code class="type-code"> string</code>
+        <br>
+        <br>
+        <p> Der Nachname des neuen Users. </p>
+  
+        <hr>
+
+        <code> email </code> <code class="type-code"> string</code>
+        <br>
+        <br>
+        <p> Die E-Mail Adresse des neuen Users. Es wird nicht explizit geprüft, ob es sich tatsächlich um eine E-Mail Adresse handelt.</p>
+        <hr>
+        <code> passwort </code> <code class="type-code"> string</code>
+        <br>
+        <br>
+        <p> Das Passwort des neuen Users, welches beim Login mitgegeben wird. </p>
+  
+        <hr>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2 class="mb-4 content-block"> <div id="login"> Login </div></h2>
+       
+        <p> Damit der User sich in der App anmelden kann, werden die folgenden Parameter benötigt.</p>
+        <br>
+        <h4>Parameter</h4>
+        <p> <code class="parameter-code"> email </code> <code class="parameter-code required"> required</code></p>
+        <p> Die E-Mail des Users.</p>
+        <hr>
+        <p> <code class="parameter-code"> passwort </code> <code class="parameter-code required"> required</code></p>
+        <p>Das Passwort des Users.</p>
+  
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2 class="mb-4 content-block"> <div id="logout"> Logout </div></h2>
+       
+        <p> Der User wird aus seiner vorhanden Session abgemeldet.</p>
+        <br>
+        <h4>Parameter</h4>
+        <p> Keine Parameter notwendig.</p>
+  
         <br>
         <br>
         <hr>
