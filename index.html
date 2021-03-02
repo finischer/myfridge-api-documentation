@@ -255,7 +255,7 @@
           <br>
           <br>
           
-          <h4>Attribute</h4>
+          <div id="userAttribute"><h4>Attribute</h4></div>
           <br>
           <br>
           <p> <code> id </code> <code class="type-code"> hash</code></p> 
@@ -410,37 +410,39 @@
         <hr>
         <br>
         <br>
+        <h4>Attribute</h4>
+        <br>
+        <br>
+        <p> Die Attribute sind die <code> User</code>-Attribute. <a href="#userAttribute">Zu den Attributen</a></p> 
         <h2 class="mb-4 content-block"> <div id="signup">Signup </div></h2>
-        <p class="content-block"> Bei der Registrierung wird ein neues <code>User</code>-Objekt erstellt. Daher müssen die folgende Attribute im JSON-Format mitgegeben werden.</p>
+        <p class="content-block"> Bei der Registrierung wird ein neues <code>User</code>-Objekt erstellt.</p>
 
         <br>
         <br>
         
-        <h4>Attribute</h4>
+        <h4>Parameter</h4>
         <br>
         <br>
-        <p> <code> vorname </code> <code class="type-code"> string</code></p>
+        <p> <code class="parameter-code"> vorname </code> <code class="parameter-code required"> required</code></p>
         <hr>
         <p> Der Vorname des neuen Users. </p>
 
-        <code> nachname </code> <code class="type-code"> string</code>
+        <code class="parameter-code"> nachname </code> <code class="parameter-code required"> required</code>
         <br>
         <br>
         <p> Der Nachname des neuen Users. </p>
   
         <hr>
 
-        <code> email </code> <code class="type-code"> string</code>
+        <code class="parameter-code"> email </code> <code class="parameter-code required"> required</code>
         <br>
         <br>
         <p> Die E-Mail Adresse des neuen Users. Es wird nicht explizit geprüft, ob es sich tatsächlich um eine E-Mail Adresse handelt.</p>
         <hr>
-        <code> passwort </code> <code class="type-code"> string</code>
+        <code class="parameter-code"> passwort </code> <code class="parameter-code required"> required</code>
         <br>
         <br>
         <p> Das Passwort des neuen Users, welches beim Login mitgegeben wird. </p>
-  
-        <hr>
         <br>
         <br>
         <hr>
