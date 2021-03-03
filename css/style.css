@@ -8226,7 +8226,7 @@ h1, h2, h3, h4, h5,
     position:fixed;
     display: block;
     width: 400px;
-    height: auto;
+    height: 400px;
     margin: 0 auto; }
     #sidebar .logo span {
       display: block; }
