@@ -319,7 +319,7 @@
           <p> Um einen User zu bekommen, können Sie nach einem bestimmten <code>User</code>-Object suchen.</p>
           <br>
           <h4>Parameter</h4>
-          <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required</code></p>
+          <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
           <p> Die ObjectID des Users.</p>
           <br>
           <br>
@@ -331,7 +331,7 @@
           <p> Um bestimmte Daten eines Users ändern zu können, können Sie bestimmte Attribute des jeweiligen <code>User</code>-Objects updaten. Auch wenn nicht alle Daten zeitgleich geändert werden, müssen alle Attribute mitgegeben werden.</p>
           <br>
           <h4>Parameter</h4>
-          <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required</code></p>
+          <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
           <p> Der User, bei der die Daten geändert werden sollen.</p>
           <hr>
           <p> <code class="parameter-code"> vorname </code> <code class="parameter-code required"> required</code></p>
@@ -358,7 +358,7 @@
           <p> Um einen bestimmten User zu löschen, können Sie nach einem bestimmten <code>User</code>-Object suchen und ihn dadurch löschen. Alle Attribute (inklusive der <code class="parameter-code"> $oid</code>) werden gelöscht.</p>
           <br>
           <h4>Parameter</h4>
-          <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required</code></p>
+          <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
           <p> Der User, welcher gelöscht wird.</p>
           <br>
           <br>
@@ -562,7 +562,7 @@
         <p> Um einen Kühlschrank abzurufen, können Sie ein <code>Fridge</code>-Object nach seiner ID abfragen.</p>
         <br>
         <h4>Parameter</h4>
-        <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required</code></p>
+        <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
           <p> Der Kühlschrank, der aufgerufen werden soll.</p>
         
         <br>
@@ -575,7 +575,7 @@
         <p> Um einen Kühlschrank zu löschen, können Sie ein <code>Fridge</code>-Object nach seiner ID löschen.</p>
         <br>
         <h4>Parameter</h4>
-        <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required</code></p>
+        <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
         <p> Der Kühlschrank, der gelöscht werden soll.</p>
         <br>
         <br>
@@ -583,15 +583,23 @@
         <br>
         <br>
         <h2 class="mb-4 content-block"> <div id="insertFridge"> Insert a product in Fridge  </div></h2>
-        <p> Um ein Produkt dem Kühlschrank hinzuzüfgen, können Sie ein <code>Fridge</code>-Object nach seiner ID suchen.</p>
+        <p> Um ein Produkt in einen Kühlschrank zu legen, können Sie ein <code>Fridge</code>-Object nach seiner ID suchen und anschließend Produkte hinzufügen.</p>
         <br>
         <h4>Parameter</h4>
+        <code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code>
+        <br>
+        <br>
+        <p> Der eindeutige Bezeichner des Kühlschranks. </p>
+
+        <hr>
+
         <code class="parameter-code"> name </code> <code class="parameter-code required"> required</code>
         <br>
         <br>
         <p> Der Name des Produkt. </p>
   
         <hr>
+
         <code class="parameter-code"> menge </code> <code class="parameter-code required"> required</code>
         <br>
         <br>
