@@ -315,7 +315,8 @@
           
 
           <h2 class="mb-4 content-block"> <div id="retrieveUser">Retrieve a User</div></h2>
-         
+          <p> <b> METHOD: GET</b></p>
+
           <p> Um einen User zu bekommen, können Sie nach einem bestimmten <code>User</code>-Object suchen.</p>
           <br>
           <h4>Parameter</h4>
@@ -327,7 +328,8 @@
           <br>
           <br>
           <h2 class="mb-4 content-block"><div id="updateUser">Update a User</div></h2>
-         
+          <p> <b> METHOD: PUT</b></p>
+
           <p> Um bestimmte Daten eines Users ändern zu können, können Sie bestimmte Attribute des jeweiligen <code>User</code>-Objects updaten. Auch wenn nicht alle Daten zeitgleich geändert werden, müssen alle Attribute mitgegeben werden.</p>
           <br>
           <h4>Parameter</h4>
@@ -354,7 +356,8 @@
           
 
           <h2 class="mb-4 content-block"><div id="deleteUser">Delete a User</div></h2>
-         
+          <p> <b> METHOD: DELETE</b></p>
+
           <p> Um einen bestimmten User zu löschen, können Sie nach einem bestimmten <code>User</code>-Object suchen und ihn dadurch löschen. Alle Attribute (inklusive der <code class="parameter-code"> $oid</code>) werden gelöscht.</p>
           <br>
           <h4>Parameter</h4>
@@ -366,7 +369,8 @@
           <br>
           <br>
           <h2 class="mb-4 content-block"><div id="listUsers">List all Users</div></h2>
-         
+          <p> <b> METHOD: GET</b></p>
+
           <p> Gibt eine Liste der User zurück, die Sie zuvor erstellt haben. Die User werden in sortierter Reihenfolge zurückgegeben, wobei die neuesten User zuerst angezeigt werden.</p>
           <br>
           <h4>Parameter</h4>
@@ -404,6 +408,8 @@
         <br>
         <br>
         <h2 class="mb-4 content-block"> <div id="signup">Signup </div></h2>
+        <p> <b> METHOD: POST</b></p>
+
         <p class="content-block"> Bei der Registrierung wird ein neues <code>User</code>-Objekt erstellt und gleichzeitig ein <code>Fridge</code>-Objekt, welcher dem User zugeordnet wird.</p>
        <br>
         <br>
@@ -437,7 +443,7 @@
         <br>
         <br>
         <h2 class="mb-4 content-block"> <div id="login"> Login </div></h2>
-       
+        <p> <b> METHOD: POST</b></p>
         <p> Damit der User sich in der App anmelden kann, werden die folgenden Parameter benötigt.</p>
         <br>
         <h4>Parameter</h4>
@@ -542,7 +548,7 @@
         <br>
 
         <h2 class="mb-4 content-block"> <div id="createFridge"> Create a Fridge </div></h2>
-       
+        <p> <b> METHOD: POST</b></p>
         <p> Um einen Kühlschrank zu erstellen, können Sie ein <code>Fridge</code>-Object erstellen.</p>
         <p> Dieser wird auch direkt bei Registrierung eines Users automatisch erstellt.</p>
         <br>
@@ -558,7 +564,7 @@
         
 
         <h2 class="mb-4 content-block"> <div id="retrieveFridge"> Retrieve a Fridge </div></h2>
-       
+        <p> <b> METHOD: GET</b></p>
         <p> Um einen Kühlschrank abzurufen, können Sie ein <code>Fridge</code>-Object nach seiner ID abfragen.</p>
         <br>
         <h4>Parameter</h4>
@@ -572,6 +578,7 @@
         <br>
         
     	  <h2 class="mb-4 content-block"> <div id="deleteFridge"> Delete a Fridge  </div></h2>
+        <p> <b> METHOD: DELETE</b></p>
         <p> Um einen Kühlschrank zu löschen, können Sie ein <code>Fridge</code>-Object nach seiner ID löschen.</p>
         <br>
         <h4>Parameter</h4>
@@ -583,24 +590,25 @@
         <br>
         <br>
         <h2 class="mb-4 content-block"> <div id="insertFridge"> Insert a product in Fridge  </div></h2>
+        <p> <b> METHOD: PUT</b></p>
         <p> Um ein Produkt in einen Kühlschrank zu legen, können Sie ein <code>Fridge</code>-Object nach seiner ID suchen und anschließend Produkte hinzufügen.</p>
         <br>
         <h4>Parameter</h4>
-        <code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code>
+        <p><code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
         <br>
         <br>
         <p> Der eindeutige Bezeichner des Kühlschranks. </p>
 
         <hr>
 
-        <code class="parameter-code"> name </code> <code class="parameter-code required"> required</code>
+        <p><code class="parameter-code"> name </code> <code class="parameter-code required"> required</code></p>
         <br>
         <br>
         <p> Der Name des Produkt. </p>
   
         <hr>
 
-        <code class="parameter-code"> menge </code> <code class="parameter-code required"> required</code>
+        <p><code class="parameter-code"> menge </code> <code class="parameter-code required"> required</code></p>
         <br>
         <br>
         <p> Die Menge des Produkts. </p>
