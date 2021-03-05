@@ -480,24 +480,34 @@
         <br>
         <br>
 
-        <h2 class="mb-4 content-block"><div id="XXX"> XXX </div></h2>
-        <p class="content-block"><code>XXX</code> Objekte repräsentieren ein XXX in der myFridge-App. Mit der API können Sie Ihre XXX erstellen, löschen und aktualisieren. Sie können sowohl einzelne XXX als auch eine Liste aller Ihrer XXX abrufen.</p>
+        <h2 class="mb-4 content-block"><div id="XXX"> Fridge </div></h2>
+        <p class="content-block"><code>Frdige</code> Objekte repräsentieren einen Kühlschrank in der myFridge-App. Mit der API können Sie Kühlschränke erstellen, löschen und aktualisieren. Sie können sowohl einzelne Kühlschränke als auch eine Liste aller Ihrer Kühlschränke abrufen.</p>
         <h2 class="mb-4"> </h2>
         <table class ="content-light">
           <th> ENDPOINTS </th>
-          <tr> <p> <td> <div class="get-string endpoint"> HTTP-METHOD </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/XXX/{XXX} </code> </td></p></tr>
-          <tr> <p> <td> <div class="post-string endpoint"> HTTP-METHOD </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/XXX/{XXX}/{XXX}</code> </td></p></tr>
-          <tr> <p> <td> <div class="delete-string endpoint"> HTTP-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/XXX/{XXX}</code> </td></p></tr>
+          <tr> <p> <td> <div class="get-string endpoint"> GET-METHOD </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/fridges </code> </td></p></tr>
+          <tr> <p> <td> <div class="delete-string endpoint"> DELETE-METHOD </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/fridges </code> </td></p></tr>
+          <tr> <p> <td> <div class="get-string endpoint"> GET-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/fridge/{fridge_id}</code> </td></p></tr>
+          <tr> <p> <td> <div class="post-string endpoint"> POST-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/fridge</code> </td></p></tr>
+          <tr> <p> <td> <div class="delete-string endpoint"> DELETE-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/fridge/{fridge_id}</code> </td></p></tr>
+          <tr> <p> <td> <div class="put-string endpoint"> PUT-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/fridge/{fridge_id}</code> </td></p></tr>
+
         </table>
         <br>
         <br>
         <hr>
         <br>
         <br>
-        <h2 class="mb-4 content-block"> <div id="XXX">The XXX Object </div></h2>
+        <h2 class="mb-4 content-block"> <div id="fridgeObject">The FRIDGE Object </div></h2>
         <table class ="content-light">
-          <th> THE XXX OBJECT </th>
-          <tr> <p> <td><code class="inside-code"> { <br> &nbsp;&nbsp;&nbsp; "id" : { <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "$oid": "603a27096136a950a84486c5" <br> &nbsp;&nbsp;&nbsp; }, <br> &nbsp;&nbsp;&nbsp; "XXX" : "XXX", <br> &nbsp;&nbsp;&nbsp; "XXX" : "XXX", <br> &nbsp;&nbsp;&nbsp; "XXX" : "XXX", <br> &nbsp;&nbsp;&nbsp; "XXX" : "XXX" <br>  }  </code></td> </p></tr>
+          <th> THE FRIDGE OBJECT </th>
+          <tr> <p> <td><code class="inside-code"> { <br> &nbsp;&nbsp;&nbsp; "_id" : {  "603a27096136a950a84486c5" <br>  
+                                                                            "produkte" : [
+                                                                              { "name":  "Apfel", <br> 
+                                                                                "menge" : 4, <br> 
+                                                                                "mhd" : "08.05.2021", <br> 
+                                                                                "kaufdatum" : "05.03.2021" <br>  
+                                                                              }  </code></td> </p></tr>
         </table>
         <br>
         <br>
