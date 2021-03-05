@@ -87,11 +87,12 @@
                     <a href="#retrieveFridge">Retrieve a Fridge</a>
                 </li>
                 <li>
+                  <a href="#deleteFridge">Delete a Fridge</a>
+              </li>
+                <li>
                   <a href="#insertFridge">Insert a Product in Fridge</a>
               </li>
-              <li>
-                <a href="#deleteFridge">Delete a Fridge</a>
-            </li>
+              
             <li>
               <a href="#listFridges">List all Fridges</a>
             </li>
@@ -377,7 +378,7 @@
           <h2 class="mb-4 content-block"><div id="listUsers">List all Users</div></h2>
           <p> <b> METHOD: GET</b></p>
 
-          <p> Gibt eine Liste der User zurück, die Sie zuvor erstellt haben. Die User werden in sortierter Reihenfolge zurückgegeben, wobei die neuesten User zuerst angezeigt werden.</p>
+          <p> Gibt eine Liste der User zurück, die Sie zuvor erstellt haben. Die User werden in sortierter Reihenfolge zurückgegeben, wobei die ältesten User zuerst angezeigt werden.</p>
           <br>
           <h4>Parameter</h4>
           <p> Keine Parameter notwendig.</p>
@@ -629,7 +630,9 @@
 
         <h2 class="mb-4 content-block"> <div id="listFridges"> List all Fridges  </div></h2>
         <p> <b> METHOD: GET</b></p>
-        <p> Um ein Produkt in einen Kühlschrank zu legen, können Sie ein <code>Fridge</code>-Object nach seiner ID suchen und anschließend Produkte hinzufügen.</p>
+        <p>  Gibt eine Liste der Kühlschränke zurück, die erstellt wurden. Die Kühlschränke werden in sortierter Reihenfolge zurückgegeben, wobei die ältesten Kühlschränke zuerst angezeigt werden.
+
+          
         <br>
         <h4>Parameter</h4>
         <p> Keine Parameter notwendig.</p>
