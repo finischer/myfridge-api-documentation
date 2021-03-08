@@ -76,7 +76,7 @@
               <ul class="collapse list-unstyled" id="fridgeSubmenu">
                 <li>
                   <a href="#allgemeinFridge">Allgemein</a>
-              </li>
+                </li>
                 <li>
                     <a href="#fridgeObject">The Fridge Object</a>
                 </li>
@@ -88,17 +88,44 @@
                 </li>
                 <li>
                   <a href="#deleteFridge">Delete a Fridge</a>
-              </li>
+                </li>
                 <li>
                   <a href="#insertFridge">Insert a Product in Fridge</a>
-              </li>
-              <li>
-                <a href="#deleteProductFridge">Delete a Product in Fridge</a>
-            </li>
+                </li>
+                <li>
+                  <a href="#deleteProductFridge">Delete a Product in Fridge</a>
+                </li>
               
+                <li>
+                 <a href="#listFridges">List all Fridges</a>
+                </li>
+              </ul>
+	          </li>
+
             <li>
-              <a href="#listFridges">List all Fridges</a>
-            </li>
+              <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Product</a>
+              <ul class="collapse list-unstyled" id="productSubmenu">
+                <li>
+                  <a href="#allgemeinProduct">Allgemein</a>
+                </li>
+                <li>
+                    <a href="#productObject">The Product Object</a>
+                </li>
+                <li>
+                    <a href="#createProduct">Create a Product</a>
+                </li>
+                <li>
+                    <a href="#retrieveProduct">Retrieve a Product</a>
+                </li>
+                <li>
+                  <a href="#updateProduct">Update a Product</a>
+                </li>
+                <li>
+                  <a href="#deleteProduct">Delete a Product</a>
+                </li>
+                <li>
+                 <a href="#listProducts">List all Products</a>
+                </li>
               </ul>
 	          </li>
 
@@ -497,6 +524,235 @@
 
 
         </table>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        <h2 class="mb-4 content-block"><div id="allgemeinProduct"> Product </div></h2>
+        <p class="content-block"><code>Product</code>-Objekte repräsentieren ein Produkt in der grundsätzlichen Produktdatenbank der myFridge-App. Mit der API können Sie ein Produkt anlegen, löschen und aktualisieren. Sie können sowohl einzelne Produkte als auch alle Produkte in einer Liste abrufen.</p>
+        <h2 class="mb-4"> </h2>
+        <table class ="content-light">
+          <th> ENDPOINTS </th>
+          <tr> <p> <td> <div class="get-string endpoint">    GET-METHOD </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/products</code> </td></p></tr>
+          <tr> <p> <td> <div class="get-string endpoint">    GET-METHOD </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/product/{product_id} </code> </td></p></tr>
+          <tr> <p> <td> <div class="get-string endpoint">    GET-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/product/{product_name} </code> </td></p></tr>
+          <tr> <p> <td> <div class="post-string endpoint">   POST-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/product</code> </td></p></tr>
+          <tr> <p> <td> <div class="put-string endpoint">    PUT-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/product/{product_id}</code> </td></p></tr>
+          <tr> <p> <td> <div class="put-string endpoint">    PUT-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/product/{product_name}</code> </td></p></tr>
+          <tr> <p> <td> <div class="delete-string endpoint"> DELETE-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/product/{product_id}</code> </td></p></tr>
+          <tr> <p> <td> <div class="delete-string endpoint"> DELETE-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/product/{product_name}</code> </td></p></tr>
+
+        </table>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2 class="mb-4 content-block"> <div id="productObject">The Product Object </div></h2>
+        <table class ="content-light">
+          <th> THE PRODUCT OBJECT </th>
+          <tr> <p> <td><code class="inside-code"> { <br> &nbsp;&nbsp;&nbsp; 
+                                                    "_id" : "603a27096136a950a84486c5", <br> &nbsp;&nbsp;&nbsp; 
+                                                    "produktname" : "Mett", <br> &nbsp;&nbsp;&nbsp; 
+                                                    "einheit" : "Stueck", <br> &nbsp;&nbsp;&nbsp; 
+                                                    "lebensmittelkategorie" : "fleisch", <br> &nbsp;&nbsp;&nbsp; 
+                                                    "optimaler_lagerort" : "Hauptfahc", <br> &nbsp;&nbsp;&nbsp;
+                                                    "kalorien" : 170, <br> &nbsp;&nbsp;&nbsp;
+                                                    "fett" : 12.0, <br> &nbsp;&nbsp;&nbsp;
+                                                    "kohlenhydrate" : 1.5, <br> &nbsp;&nbsp;&nbsp;
+                                                    "protein" : 14.0, <br> &nbsp;&nbsp;&nbsp;
+                                                    "haltbarkeit" : 3
+                                                    
+                                                    
+                                                      
+                                                  }<br></code></td> </p></tr>
+        </table>
+        <br>
+        <br>
+        
+        <h4>Attribute</h4>
+        <br>
+        <br>
+        <code> _id </code> <code class="type-code"> string</code>
+        <br>
+        <br>
+        <p> Eindeutiger Bezeichner für das <code> Product</code>-Object.</p>
+        
+        <code> produktname </code> <code class="type-code"> string</code>
+        <br>
+        <br>
+        <p> Name des Produkts. (einzigartig) </p>
+
+        <code> einheit </code> <code class="type-code"> string</code>
+        <br>
+        <br>
+        <p> Einheitsbezeichung des Produkts. Gültige Werte sind "Stueck". </p>
+
+        <code> lebensmittelkategorie </code> <code class="type-code"> string</code>
+        <br>
+        <br>
+        <p> Kategorie des Produkts. Gültige Werte sind "Fleisch", "Fischer", "Obst", "Gemüse", "Getränk", "Milchprodukt" und "Tierprodukt". </p>
+
+        <code> optimaler_lagerort </code> <code class="type-code"> string</code>
+        <br>
+        <br>
+        <p> Optimaler Lagerort des Produkts. Gültige Werte sind "Hauptfach", "Gemüsefach" und "Tür". </p>
+
+        <code> kalorien </code> <code class="type-code"> int</code>
+        <br>
+        <br>
+        <p> Kcal eines Produkts pro 100 Gramm. </p>
+
+        <code> fett </code> <code class="type-code"> float</code>
+        <br>
+        <br>
+        <p> Fett eines Produkts pro 100 Gramm. </p>
+
+        <code> fett </code> <code class="type-code"> float</code>
+        <br>
+        <br>
+        <p> Fett eines Produkts pro 100 Gramm. </p>
+
+        <code> kohlenhydrate </code> <code class="type-code"> float</code>
+        <br>
+        <br>
+        <p> Kohlenhydrate eines Produkts pro 100 Gramm. </p>
+
+        <code> protein </code> <code class="type-code"> float</code>
+        <br>
+        <br>
+        <p> Eiweiß eines Produkts pro 100 Gramm. </p>
+        
+        <code> haltbarkeit </code> <code class="type-code"> int</code>
+        <br>
+        <br>
+        <p> Die durchschnittliche Haltbarkeit eines Produkts in Tagen. </p>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        <h2 class="mb-4 content-block"> <div id="createProduct"> Create a Fridge </div></h2>
+        <p> <b> METHOD: POST</b></p>
+        <p> Um ein Produkt zu erstellen, können Sie ein <code>Product</code>-Object erstellen.</p>
+        <br>
+        <h4>Parameter</h4>
+        <p> <code class="parameter-code"> produktname </code> <code class="parameter-code required"> required</code></p>
+        <p> Der Name des neuen Produkts.</p>
+        <hr>
+        <p> <code class="parameter-code"> einheit </code> <code class="parameter-code required"> required/optional</code></p>
+        <p> Die Einheit des neuen Produkts.</p>
+        <p> <code class="parameter-code"> lebensmittelkatogerie </code> <code class="parameter-code required"> required</code></p>
+        <p> Die Kategorie des neuen Produkts.</p>
+        <hr>
+        <p> <code class="parameter-code"> optimaler_lagerort </code> <code class="parameter-code required"> required</code></p>
+        <p>Der optimale Lagerort des neuen Produkts.</p>
+        <p> <code class="parameter-code"> kalorien</code> <code class="parameter-code required"> required</code></p>
+        <p> Die Kcal des neuen Produkts pro 100 Gramm.</p>
+        <hr>
+        <p> <code class="parameter-code"> fett </code> <code class="parameter-code required"> required</code></p>
+        <p>Das Fett des neuen Produkts pro 100 Gramm.</p>
+        <p> <code class="parameter-code"> kohlenhydrate </code> <code class="parameter-code required"> required</code></p>
+        <p> Die Kohlenhydrate des neuen Produkts pro 100 Gramm.</p>
+        <hr>
+        <p> <code class="parameter-code"> protein </code> <code class="parameter-code required"> required</code></p>
+        <p>Das Eiweiß des neuen Produkts pro 100 Gramm.</p>
+        <hr>
+        <p> <code class="parameter-code"> haltbarkeit </code> <code class="parameter-code required"> required</code></p>
+        <p>Die durchschnittliche Haltbarkeit des neuen Produkts in Tagen.</p>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        
+
+        <h2 class="mb-4 content-block"> <div id="retrieveProduct"> Retrieve a Product </div></h2>
+        <p> <b> METHOD: GET</b></p>
+        <p> Um ein Produkt abzurufen, können Sie ein <code>Produkt</code>-Object nach seiner ID oder nach seinem Produktnamen abfragen.</p>
+        <br>
+        <h4>Parameter (nur ein Parameter benötigt)</h4>
+        <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
+        <p> Die ID des Produkts, welches aufgerufen werden soll.</p>
+        <hr> 
+        <p> <code class="parameter-code"> produktname </code> <code class="parameter-code required"> required in url</code></p>
+        <p> Der Name des Produkts, welches aufgerufen werden soll.</p>
+        
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        
+    	  <h2 class="mb-4 content-block"> <div id="updateProduct"> Update a Product  </div></h2>
+        <p> <b> METHOD: PUT</b></p>
+        <p> Um bestimmte Daten eines Produkts ändern zu können, können Sie bestimmte Attribute des jeweiligen <code>Product</code>-Objects updaten. Auch wenn nicht alle Daten zeitgleich geändert werden, müssen alle Attribute übergeben werden.</p>
+        <br>
+        <h4>Parameter</h4>
+        <p> <code class="parameter-code"> produktname </code> <code class="parameter-code required"> required</code></p>
+        <p> Der Name des zu aktualisierenden Produkts.</p>
+        <hr>
+        <p> <code class="parameter-code"> einheit </code> <code class="parameter-code required"> required/optional</code></p>
+        <p> Die Einheit des zu aktualisierenden Produkts.</p>
+        <p> <code class="parameter-code"> lebensmittelkatogerie </code> <code class="parameter-code required"> required</code></p>
+        <p> Die Kategorie des zu aktualisierenden Produkts.</p>
+        <hr>
+        <p> <code class="parameter-code"> optimaler_lagerort </code> <code class="parameter-code required"> required</code></p>
+        <p>Der optimale Lagerort des zu aktualisierenden Produkts.</p>
+        <p> <code class="parameter-code"> kalorien</code> <code class="parameter-code required"> required</code></p>
+        <p> Die Kcal des zu aktualisierenden Produkts pro 100 Gramm.</p>
+        <hr>
+        <p> <code class="parameter-code"> fett </code> <code class="parameter-code required"> required</code></p>
+        <p>Das Fett des zu aktualisierenden Produkts pro 100 Gramm.</p>
+        <p> <code class="parameter-code"> kohlenhydrate </code> <code class="parameter-code required"> required</code></p>
+        <p> Die Kohlenhydrate des zu aktualisierenden Produkts pro 100 Gramm.</p>
+        <hr>
+        <p> <code class="parameter-code"> protein </code> <code class="parameter-code required"> required</code></p>
+        <p>Das Eiweiß des zu aktualisierenden Produkts pro 100 Gramm.</p>
+        <hr>
+        <p> <code class="parameter-code"> haltbarkeit </code> <code class="parameter-code required"> required</code></p>
+        <p>Die durchschnittliche Haltbarkeit des zu aktualisierenden Produkts in Tagen.</p>
+
+        
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        <h2 class="mb-4 content-block"> <div id="deleteProduct"> Delete a Product </div></h2>
+        <p> <b> METHOD: DELETE</b></p>
+        <p> Um ein bestimmtes Product zu löschen, können Sie nach einem bestimmten Produkt suchen und ihn dadurch löschen. Sie können entweder mit der Produkt-ID oder dem Produktnamen nach dem <code>Product</code>-Object suchen.</p>
+        <br>
+        <h4>Parameter (nur ein Parameter benötigt)</h4>
+        <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
+        <p> Die ID des Produkts, welches gelöscht werden soll.</p>
+        <hr> 
+        <p> <code class="parameter-code"> produktname </code> <code class="parameter-code required"> required in url</code></p>
+        <p> Der Name des Produkts, welches gelöscht werden soll.</p>
+       
+    
+          
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        <h2 class="mb-4 content-block"> <div id="listProducts"> List all Products  </div></h2>
+        <p> <b> METHOD: GET</b></p>
+        <p> Gibt eine Liste aller Produkte zurück. Die Produkte werden in sortierter Reihenfolge ausgegeben, wobei das älteste Produkt zuerst angezeigt wird.
+
+          
+        <br>
+        <h4>Parameter</h4>
+        <p> Keine Parameter notwendig.</p>
+          
         <br>
         <br>
         <hr>
