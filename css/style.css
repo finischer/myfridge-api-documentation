@@ -8210,7 +8210,9 @@ h1, h2, h3, h4, h5,
   margin: 40px 0; }
 
 .wrapper {
-  width: 100%; }
+  width: 100%;
+  position: relative;
+}
 
 #sidebar {
   min-width: 300px;
