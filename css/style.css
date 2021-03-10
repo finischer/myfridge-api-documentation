@@ -8223,15 +8223,6 @@ h1, h2, h3, h4, h5,
 }
 
 #sidebar {
-
-  ::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
-  }
-  /* optional: show position indicator in red */
-  ::-webkit-scrollbar-thumb {
-    background: #FF0000;
-  }
   min-width: 300px;
   max-width: 300px;
   background: #1d1919;
