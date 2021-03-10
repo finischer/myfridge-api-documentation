@@ -187,6 +187,15 @@
                 <li>
                     <a href="#allgemeinSearch">Allgemein</a>
                 </li>
+                <li>
+                  <a href="#searchAll">Search by All</a>
+                </li>
+                <li>
+                  <a href="#searchCategory">Search by Category</a>
+                </li>
+                <li>
+                  <a href="#searchFridge">Search in Fridge</a>
+              </li>
                
               </ul>
 	          </li>
@@ -289,7 +298,18 @@
           <h2 class="mb-4 content-block"> <div id="userObject">The User Object </div></h2>
           <table class ="content-light">
             <th> THE USER OBJECT </th>
-            <tr> <p> <td><code class="inside-code"> { <br> &nbsp;&nbsp;&nbsp; "_id" : "603a27096136a950a84486c5", <br> &nbsp;&nbsp;&nbsp; "fridge_id" : "159a2501372365h750a84548d6", <br> &nbsp;&nbsp;&nbsp; "shoppinglist_id" : "298z142864028175h750a323225a4", <br> &nbsp;&nbsp;&nbsp; "vorname" : "Max", <br> &nbsp;&nbsp;&nbsp; "nachname" : "Mustermann", <br> &nbsp;&nbsp;&nbsp; "email" : "max.mustermann@mail.de",  <br> &nbsp;&nbsp;&nbsp; "passwort" : "shj2z384fh2937428hf" <br>   }  </code></td> </p></tr>
+            <tr> <p> <td><code class="inside-code"> { <br> &nbsp;&nbsp;&nbsp; 
+                                                      "_id" : "603a27096136a950a84486c5", <br> &nbsp;&nbsp;&nbsp; 
+                                                      "fridge_id" : "159a2501372365h750a84548d6", <br> &nbsp;&nbsp;&nbsp; 
+                                                      "shoppinglist_id" : "298z142864028175h750a323225a4", <br> &nbsp;&nbsp;&nbsp; 
+                                                      "vorname" : "Max", <br> &nbsp;&nbsp;&nbsp; 
+                                                      "nachname" : "Mustermann", <br> &nbsp;&nbsp;&nbsp; 
+                                                      "email" : "max.mustermann@mail.de",  <br> &nbsp;&nbsp;&nbsp; 
+                                                      "passwort" : "shj2z384fh2937428hf", <br> &nbsp;&nbsp;&nbsp; 
+                                                      "ernaehrungstyp" : "vegan",  <br> &nbsp;&nbsp;&nbsp; 
+                                                      "profilbild" : tbd?  <br>   
+                                                    }  
+                          </code></td> </p></tr>
           </table>
           <br>
           <br>
@@ -342,6 +362,20 @@
           <br>
           <br>
           <p> E-Mail Adresse des Users </p>
+
+          <hr>
+
+          <code> ernaehrungstyp </code> <code class="type-code"> string</code>
+          <br>
+          <br>
+          <p> Der Ernährungstyp des Users </p>
+
+          <hr>
+
+          <code> profilbild </code> <code class="type-code"> tbd (int oder string -> link)</code>
+          <br>
+          <br>
+          <p> Das Profilbild des Users </p>
           <br>
           <br>
           <hr>
@@ -912,7 +946,8 @@
         <table class ="content-light">
           <th> ENDPOINTS </th>
           <tr> <p> <td> <div class="get-string endpoint"> GET </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/search/{search_string} </code> </td></p></tr>
-          <tr> <p> <td> <div class="get-string endpoint"> GET </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/searchresult/{search_string} </code> </td></p></tr>
+          <tr> <p> <td> <div class="get-string endpoint"> GET </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/searchresult/{fridge_id}/{search_string} </code> </td></p></tr>
+          <tr> <p> <td> <div class="get-string endpoint"> GET </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/fridgesearch/{fridge_id}/{categorie} </code> </td></p></tr>
 
 
         </table>
@@ -921,6 +956,59 @@
         <hr>
         <br>
         <br>
+
+        <h2 class="mb-4 content-block"> <div id="searchAll"> Search by All   </div></h2>
+        <p> <b> METHOD: GET</b></p>
+        <p> Wenn Sie alle Produkte mit dem Suchergebnis angezeigt bekommen wollen, können Sie das mit dem Endpoint "/api/search/{search_string}" machen.</p>
+        <br>
+        <h4>Parameter</h4>
+        <p><code class="parameter-code"> search_string </code> <code class="parameter-code required"> required in url</code></p>
+        <p> Der eingegebene Wert, nach dem gesucht werden soll. </p>
+
+        
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        <h2 class="mb-4 content-block"> <div id="searchCategory"> Search by Category  </div></h2>
+        <p> <b> METHOD: GET</b></p>
+        <p> Wenn Sie Produkte nach Kategorie suchen wollen, können Sie das mit dem Endpoint "/api/fridgesearch/{fridge_id}/{categorie}" machen.</p>
+        <br>
+        <h4>Parameter</h4>
+        <p><code class="parameter-code"> fridge_id </code> <code class="parameter-code required"> required in url</code></p>
+        <p> Der eindeutige Bezeichner des Kühlschranks. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> categorie </code> <code class="parameter-code required"> required in url</code></p>
+        <p> Die Kategorie, nach der gesucht werden soll. </p>
+
+        
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        
+
+        <h2 class="mb-4 content-block"> <div id="searchFridge"> Search in Fridge  </div></h2>
+        <p> <b> METHOD: GET</b></p>
+        <p> Wenn Sie nach Produkte innerhalb eines Kühlschranks suchen wollen, können Sie das mit dem Endpoint "/api/searchresult/{fridge_id}/{search_string}" machen.</p>
+        <br>
+        <h4>Parameter</h4>
+        <p><code class="parameter-code"> fridge_id </code> <code class="parameter-code required"> required in url</code></p>
+        <p> Der eindeutige Bezeichner des Kühlschranks. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> search_string </code> <code class="parameter-code required"> required in url</code></p>
+        <p> Der eingegeben Wert, nach dem gesucht werden soll. </p>
+
+
 
 
 
