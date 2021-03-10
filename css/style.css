@@ -8237,6 +8237,7 @@ h1, h2, h3, h4, h5,
     width: 12%;
     padding-top: 150px; 
     overflow-y: scroll;
+    overflow: hidden;
     top: 0;
     bottom: 0;}
   #sidebar ul li {
