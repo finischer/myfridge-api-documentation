@@ -123,7 +123,7 @@
                   <a href="#deleteProductFridge">Delete a Product in Fridge</a>
                 </li>
                 <li>
-                  <a href="#reduceProductFridge">Reduce the amount of a product by one in Fridge</a>
+                  <a href="#reduceProductFridge">Reduce the amount of a product in Fridge</a>
                 </li>
               
                 <li>
@@ -527,7 +527,7 @@
         <p> Der Ernaherungstyp des neuen Users. </p>
         <hr>
 
-        <code class="parameter-code"> Profilbild</code> <code class="parameter-code optional"> optional</code>
+        <code class="parameter-code"> profilbild</code> <code class="parameter-code optional"> optional</code>
         <br>
         <br>
         <p> Das Profilbild des neuen Users. </p>
@@ -572,12 +572,9 @@
         <table class ="content-light">
           <th> ENDPOINTS </th>
           <tr> <p> <td> <div class="get-string endpoint">    GET-METHOD </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/products</code> </td></p></tr>
-          <tr> <p> <td> <div class="get-string endpoint">    GET-METHOD </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/product/{product_id} </code> </td></p></tr>
           <tr> <p> <td> <div class="get-string endpoint">    GET-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/product/{product_name} </code> </td></p></tr>
           <tr> <p> <td> <div class="post-string endpoint">   POST-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/product</code> </td></p></tr>
-          <tr> <p> <td> <div class="put-string endpoint">    PUT-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/product/{product_id}</code> </td></p></tr>
           <tr> <p> <td> <div class="put-string endpoint">    PUT-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/product/{product_name}</code> </td></p></tr>
-          <tr> <p> <td> <div class="delete-string endpoint"> DELETE-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/product/{product_id}</code> </td></p></tr>
           <tr> <p> <td> <div class="delete-string endpoint"> DELETE-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/product/{product_name}</code> </td></p></tr>
 
         </table>
@@ -674,7 +671,7 @@
         <p> <code class="parameter-code"> produktname </code> <code class="parameter-code required"> required</code></p>
         <p> Der Name des neuen Produkts.</p>
         <hr>
-        <p> <code class="parameter-code"> einheit </code> <code class="parameter-code required"> required/optional</code></p>
+        <p> <code class="parameter-code"> einheit </code> <code class="parameter-code required"> required</code></p>
         <p> Die Einheit des neuen Produkts.</p>
         <p> <code class="parameter-code"> lebensmittelkatogerie </code> <code class="parameter-code required"> required</code></p>
         <p> Die Kategorie des neuen Produkts.</p>
@@ -707,10 +704,7 @@
         <p> <b> METHOD: GET</b></p>
         <p> Um ein Produkt abzurufen, können Sie ein <code>Produkt</code>-Object nach seiner ID oder nach seinem Produktnamen abfragen.</p>
         <br>
-        <h4>Parameter (nur ein Parameter benötigt)</h4>
-        <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
-        <p> Die ID des Produkts, welches aufgerufen werden soll.</p>
-        <hr> 
+        <h4>Parameter </h4>
         <p> <code class="parameter-code"> produktname </code> <code class="parameter-code required"> required in url</code></p>
         <p> Der Name des Produkts, welches aufgerufen werden soll.</p>
         
@@ -725,10 +719,10 @@
         <p> Um bestimmte Daten eines Produkts ändern zu können, können Sie bestimmte Attribute des jeweiligen <code>Product</code>-Objects updaten. Auch wenn nicht alle Daten zeitgleich geändert werden, müssen alle Attribute übergeben werden.</p>
         <br>
         <h4>Parameter</h4>
-        <p> <code class="parameter-code"> produktname </code> <code class="parameter-code required"> required</code></p>
+        <p> <code class="parameter-code"> produktname </code> <code class="parameter-code required"> required in url</code></p>
         <p> Der Name des zu aktualisierenden Produkts.</p>
         <hr>
-        <p> <code class="parameter-code"> einheit </code> <code class="parameter-code required"> required/optional</code></p>
+        <p> <code class="parameter-code"> einheit </code> <code class="parameter-code required"> required</code></p>
         <p> Die Einheit des zu aktualisierenden Produkts.</p>
         <p> <code class="parameter-code"> lebensmittelkatogerie </code> <code class="parameter-code required"> required</code></p>
         <p> Die Kategorie des zu aktualisierenden Produkts.</p>
@@ -760,10 +754,7 @@
         <p> <b> METHOD: DELETE</b></p>
         <p> Um ein bestimmtes Product zu löschen, können Sie nach einem bestimmten Produkt suchen und ihn dadurch löschen. Sie können entweder mit der Produkt-ID oder dem Produktnamen nach dem <code>Product</code>-Object suchen.</p>
         <br>
-        <h4>Parameter (nur ein Parameter benötigt)</h4>
-        <p> <code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
-        <p> Die ID des Produkts, welches gelöscht werden soll.</p>
-        <hr> 
+        <h4>Parameter </h4>
         <p> <code class="parameter-code"> produktname </code> <code class="parameter-code required"> required in url</code></p>
         <p> Der Name des Produkts, welches gelöscht werden soll.</p>
        
@@ -800,8 +791,8 @@
           <tr> <p> <td> <div class="post-string endpoint">   POST-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/fridge</code> </td></p></tr>
           <tr> <p> <td> <div class="put-string endpoint">    PUT-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/fridge/{fridge_id}</code> </td></p></tr>
           <tr> <p> <td> <div class="delete-string endpoint"> DELETE-METHOD </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/fridges </code> </td></p></tr>
-          <tr> <p> <td> <div class="delete-string endpoint"> DELETE-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/fridge/{fridge_id}</code> </td></p></tr>
-          <tr> <p> <td> <div class="delete-string endpoint"> DELETE-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/fridge/reduce/{fridge_id}/{product_name}</code> </td></p></tr>
+          <tr> <p> <td> <div class="delete-string endpoint"> DELETE-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">/api/fridge/{fridge_id}/{product_name}</code> </td></p></tr>
+          <tr> <p> <td> <div class="delete-string endpoint"> DELETE-METHOD </div>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">/api/fridge/reduce/{fridge_id}/{product_name}/{menge}</code> </td></p></tr>
 
         </table>
         <br>
@@ -816,13 +807,17 @@
                                                     "_id" : "603a27096136a950a84486c5", <br> &nbsp;&nbsp;&nbsp; 
                                                     "produkte" : [ <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
                                                       { <br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "fridge_product_id":  "2349fsr329r898fdf83", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                                         "name":  "Apfel", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "einheit":  "stueck", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                                         "menge" : 4, <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
                                                         "mhd" : "08.05.2021", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
                                                         "kaufdatum" : "05.03.2021" <br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
                                                       },<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
                                                       {<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "fridge_product_id":  "8942fed582i045jea71", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                                         "name":  "Joghurt", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "einheit":  "stueck", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
                                                         "menge" : 2, <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
                                                         "mhd" : "22.04.2021", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
                                                         "kaufdatum" : "08.04.2021" <br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
@@ -939,9 +934,9 @@
         <br>
         <br>
 
-        <h2 class="mb-4 content-block"> <div id="reduceProductFridge"> Reduce the amount of a product by one in Fridge  </div></h2>
+        <h2 class="mb-4 content-block"> <div id="reduceProductFridge"> Reduce the amount of a product in Fridge  </div></h2>
         <p> <b> METHOD: DELETE</b></p>
-        <p> Um die Menge eines Produkts im Kühlschrank um 1 zu verringern, können Sie ein <code>Fridge</code>-Object nach seiner ID und ein Produkt in diesem <code>Fridge</code>-Object nach dem entsprechenden Produktnamen suchen. Ist nur noch 1 Stück eines Produkts im Kühlschrank wird es automatisch komplett entfernt.</p>
+        <p> Um die Menge eines Produkts im Kühlschrank zu verringern, können Sie ein <code>Fridge</code>-Object nach seiner ID und ein Produkt in diesem <code>Fridge</code>-Object nach dem entsprechenden Produktnamen suchen. Ist nur noch 1 Stück eines Produkts im Kühlschrank wird es automatisch komplett entfernt.</p>
         <br>
         <h4>Parameter</h4>
         <p><code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
@@ -951,6 +946,11 @@
 
         <p><code class="parameter-code"> name </code> <code class="parameter-code required"> required in url</code></p>
         <p> Der Name des Produkts. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> menge </code> <code class="parameter-code required"> required in url</code></p>
+        <p> Die Menge, die entfernt werden soll. </p>
   
         
         
