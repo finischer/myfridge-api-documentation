@@ -8428,6 +8428,11 @@ code{
   text-transform: uppercase;
 }
 
+.optional{
+  color: #8792a2;
+  font-weight: normal;
+}
+
 #sidebar-footer{
   padding-top: 12px;
   width: 100%;
