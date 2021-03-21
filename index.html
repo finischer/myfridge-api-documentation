@@ -134,33 +134,36 @@
 
             
 
-<!-- 
+
             
 
             <li>
               <a href="#rezeptSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Recipe</a>
               <ul class="collapse list-unstyled" id="rezeptSubmenu">
                 <li>
-                    <a href="#">The Recipe Object</a>
+                    <a href="#allgemeinRecipe">The Recipe Object</a>
                 </li>
                 <li>
-                    <a href="#">Create a Recipe</a>
+                    <a href="#createRecipe">Create a Recipe</a>
                 </li>
                 <li>
-                    <a href="#">Retrieve a Recipe</a>
+                    <a href="#retrieveRecipe">Retrieve a Recipe</a>
                 </li>
                 <li>
-                  <a href="#">Update a Recipe</a>
+                  <a href="#updateRecipe">Update a Recipe</a>
               </li>
               <li>
-                <a href="#">Delete a Recipe</a>
+                <a href="#deleteRecipe">Delete a Recipe</a>
             </li>
             <li>
-              <a href="#">List all Recipes</a>
+              <a href="#deleteRecipes">Delete all Recipes</a>
+          </li>
+            <li>
+              <a href="#listRecipes">List all Recipes</a>
             </li>
               </ul>
 	          </li>
--->
+
             <li>
               <a href="#shoppinglistSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Shoppinglist</a>
               <ul class="collapse list-unstyled" id="shoppinglistSubmenu">
@@ -284,7 +287,7 @@
           <br>
 
           <h2 class="mb-4 content-block"><div id="allgemeinUser"> User </div></h2>
-          <p class="content-block"><code>User</code> Objekte repräsentieren einen Nutzer in der myFridge-App. Mit der API können Sie Ihre User erstellen, löschen und aktualisieren. Sie können sowohl einzelne User als auch eine Liste aller Ihrer User abrufen.</p>
+          <p class="content-block"><code>User</code> Objectse repräsentieren einen Nutzer in der myFridge-App. Mit der API können Sie Ihre User erstellen, löschen und aktualisieren. Sie können sowohl einzelne User als auch eine Liste aller Ihrer User abrufen.</p>
           <h2 class="mb-4"> </h2>
           <table class ="content-light">
             <th> ENDPOINTS </th>
@@ -492,7 +495,7 @@
         <h2 class="mb-4 content-block"> <div id="signup">Signup </div></h2>
         <p> <b> METHOD: POST</b></p>
 
-        <p class="content-block"> Bei der Registrierung wird ein neues <code>User</code>-Objekt erstellt und gleichzeitig ein <code>Fridge</code>-Objekt, welcher dem User zugeordnet wird.</p>
+        <p class="content-block"> Bei der Registrierung wird ein neues <code>User</code>-Object erstellt und gleichzeitig ein <code>Fridge</code>-Object, welcher dem User zugeordnet wird.</p>
        <br>
         <br>
         
@@ -567,7 +570,7 @@
         
 
         <h2 class="mb-4 content-block"><div id="allgemeinProduct"> Product </div></h2>
-        <p class="content-block"><code>Product</code>-Objekte repräsentieren ein Produkt in der grundsätzlichen Produktdatenbank der myFridge-App. Mit der API können Sie ein Produkt anlegen, löschen und aktualisieren. Sie können sowohl einzelne Produkte als auch alle Produkte in einer Liste abrufen.</p>
+        <p class="content-block"><code>Product</code>-Objectse repräsentieren ein Produkt in der grundsätzlichen Produktdatenbank der myFridge-App. Mit der API können Sie ein Produkt anlegen, löschen und aktualisieren. Sie können sowohl einzelne Produkte als auch alle Produkte in einer Liste abrufen.</p>
         <h2 class="mb-4"> </h2>
         <table class ="content-light">
           <th> ENDPOINTS </th>
@@ -782,7 +785,7 @@
         <br>
 
         <h2 class="mb-4 content-block"><div id="allgemeinFridge"> Fridge </div></h2>
-        <p class="content-block"><code>Fridge</code> Objekte repräsentieren einen Kühlschrank in der myFridge-App. Mit der API können Sie Kühlschränke erstellen, löschen und aktualisieren. Sie können sowohl einzelne Kühlschränke als auch eine Liste aller Ihrer Kühlschränke abrufen.</p>
+        <p class="content-block"><code>Fridge</code> Objects repräsentieren einen Kühlschrank in der myFridge-App. Mit der API können Sie Kühlschränke erstellen, löschen und aktualisieren. Sie können sowohl einzelne Kühlschränke als auch eine Liste aller Ihrer Kühlschränke abrufen.</p>
         <h2 class="mb-4"> </h2>
         <table class ="content-light">
           <th> ENDPOINTS </th>
@@ -1280,13 +1283,13 @@
         <br>
         <br>
 
-        <h2 class="mb-4 content-block"> <div id="retrieveShoppinglist"> Retrieve a Shoppinglist  </div></h2>
+        <h2 class="mb-4 content-block"> <div id="retrieveRecipe"> Retrieve a Recipe  </div></h2>
         <p> <b> METHOD: GET</b></p>
-        <p> Eine Shoppingliste kann anhand der user_id abgefragt werden.</p>
+        <p> Ein Rezept kann anhand der recipe_id abgefragt werden.</p>
         <br>
         <h4>Parameter</h4>
-        <p><code class="parameter-code"> user_id </code> <code class="parameter-code required"> required in url</code></p>
-        <p>User, dem die Einkaufsliste zugeordnet ist. </p>
+        <p><code class="parameter-code"> recipe_id </code> <code class="parameter-code required"> required in url</code></p>
+        <p>Eindeutiger Bezeichner für das <code>Recipe</code>-Objekt </p>
 
         
         <br>
@@ -1294,23 +1297,78 @@
         <hr>
         <br>
         <br>
-        <h2 class="mb-4 content-block"> <div id="insertProductShoppinglist"> Insert a product in the Shoppinglist  </div></h2>
+        <h2 class="mb-4 content-block"> <div id="createRecipe"> Create a Recipe  </div></h2>
         <p> <b> METHOD: POST</b></p>
         <p> Um ein Produkt der Einkaufsliste hinzuzufügen, können Sie ein <code>Shoppinglist</code>-Object anhand seiner ID suchen und anschließend Produkte hinzufügen.</p>
         <br>
         <h4>Parameter</h4>
-        <p><code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
-        <p>Der eindeutige Bezeichner der Einkaufsliste </p>
-        
-        <hr>
-
-        <p><code class="parameter-code"> name </code> <code class="parameter-code required"> required </code></p>
-        <p>Der Name des Produkts </p>
+        <p><code class="parameter-code"> bild </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> URL zu dem Bild des Rezeptes. </p>
 
         <hr>
 
-        <p><code class="parameter-code"> menge </code> <code class="parameter-code required"> required </code></p>
-        <p>Die Menge des Produkts </p>
+        <p><code class="parameter-code"> name </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Der Name des Rezeptes. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> beschreibung </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Eine Beschreibung des zu kochenden Gerichts. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> mahlzeit </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Gibt die Mahlzeit an, für welche sich das Gericht eignet (Frühstück, Mittagessen,…). </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> kategorien </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Einordnung des Rezeptes in Kategorien (vegetarisch, laktosefrei,…). </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> schwierigkeitsgrad</code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Gibt den Schwierigkeitsgrad des Rezeptes an. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> zubereitungszeit </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Gibt die für das Kochen benötigte Zeit an. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> bewertung </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Gibt die Bewertung des Rezeptes an. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> zutaten </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Speichert alle benötigten Zutaten des Rezeptes inklusive der benötigten Menge und zugehörigen Einheit. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> zubereitung </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Speichert die Zubereitungsschritte. </p>
 
         <br>
         <br>
@@ -1318,20 +1376,86 @@
         <br>
         <br>
 
-        <h2 class="mb-4 content-block"> <div id="deleteProductShoppinglist"> Delete a (or all) product(s) in a Shoppinglist  </div></h2>
-        <p> <b> METHOD: DELETE</b></p>
-        <p> Um alle Produkte aus einer Einkaufsliste zu löschen, können Sie ihre ID in der URL angeben und alle Produkte werden gelöscht.
-          Um ein einziges Produkt aus einer Einkaufsliste zu löschen, müssen Sie sowohl die ID der Einkaufsliste, als auch den Namen des Produkts in der URL angeben.
+        <h2 class="mb-4 content-block"> <div id="updateRecipe"> Update a Recipe  </div></h2>
+        <p> <b> METHOD: PUT</b></p>
+        <p> Um bestimmte Daten eines Rezepts ändern zu können, können Sie bestimmte Attribute des jeweiligen <code>Recipe</code>-Objects updaten. Auch wenn nicht alle Daten zeitgleich geändert werden, müssen alle Attribute übergeben werden.
           </p>
         <br>
         <h4>Parameter</h4>
         <p><code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
-        <p>Der eindeutige Bezeichner der Einkaufsliste </p>
+        <p>Der eindeutige Bezeichner der Einkaufsliste, die geupdated werden soll. </p>
+        
         
         <hr>
 
-        <p><code class="parameter-code"> name </code> <code class="parameter-code optional"> optional in url </code></p>
-        <p>Der Name des Produkts </p>
+        <p><code class="parameter-code"> bild </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Die neue URL zu dem Bild des Rezeptes. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> name </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Der neue Name des Rezeptes. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> beschreibung </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Eine neue Beschreibung des zu kochenden Gerichts. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> mahlzeit </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Gibt die neue Mahlzeit an, für welche sich das Gericht eignet (Frühstück, Mittagessen,…). </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> kategorien </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Neue Einordnung des Rezeptes in Kategorien (vegetarisch, laktosefrei,…). </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> schwierigkeitsgrad</code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Gibt den neuen Schwierigkeitsgrad des Rezeptes an. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> zubereitungszeit </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Gibt die für das Kochen neue benötigte Zeit an. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> bewertung </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Gibt die neue Bewertung des Rezeptes an. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> zutaten </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Speichert alle neuen benötigten Zutaten des Rezeptes inklusive der benötigten Menge und zugehörigen Einheit. </p>
+
+        <hr>
+
+        <p><code class="parameter-code"> zubereitung </code> <code class="parameter-code required"> required</code></p>
+        <br>
+        <br>
+        <p> Speichert die neuen Zubereitungsschritte. </p>
+        
 
 
         <br>
@@ -1340,32 +1464,31 @@
         <br>
         <br>
 
-        <h2 class="mb-4 content-block"> <div id="updateProductShoppinglist"> Update a Product in a Shoppinglist  </div></h2>
-        <p> <b> METHOD: PUT</b></p>
-        <p> Um Daten eines Produktes zu ändern, können Sie die ID der Shoppingliste in der URL angeben und die neuen Daten als JSON-body an den Endpunkt senden.
-          Wenn der Status eines Produktes von „offen“ zu „besorgt“ geändert wird, wird er automatisch dem Kühlschrank des Users hinzugefügt. Wenn der Status von „besorgt“ zu „offen“ geändert wird, wird das Produkt aus dem Kühlschrank des Users entfernt.
-          Wenn die Menge 0 entspricht, wird das Produkt aus der Shoppingliste entfernt, ansonsten wird nur die Menge angepasst.
+
+        <h2 class="mb-4 content-block"> <div id="deleteRecipe"> Delete a Recipe  </div></h2>
+        <p> <b> METHOD: DELETE</b></p>
+        <p> Sie können ein bestimmtes <code>Recipe</code>-Object nach seiner ID suchen und löschen.
+          </p>
+        <br>
+        <h4>Parameter</h4>
+        <p><code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
+        <p>Der eindeutige Bezeichner der Einkaufsliste, die gelöscht werden soll. </p>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        <h2 class="mb-4 content-block"> <div id="deleteRecipes"> Delete all Recipes  </div></h2>
+        <p> <b> METHOD: DELETE</b></p>
+        <p>Löscht alle Rezepte, die erstellt wurden.
           
           </p>
         <br>
         <h4>Parameter</h4>
-        <p><code class="parameter-code"> _id </code> <code class="parameter-code required"> required in url</code></p>
-        <p>Der eindeutige Bezeichner der Einkaufsliste </p>
-        
-        <hr>
+        <p>Keine Parameter notwendig. </p>
 
-        <p><code class="parameter-code"> name </code> <code class="parameter-code required"> required </code></p>
-        <p>Der Name des Produkts </p>
-
-        <hr>
-
-        <p><code class="parameter-code"> menge </code> <code class="parameter-code required"> required </code></p>
-        <p>Die Menge des Produkts</p>
-
-        <hr>
-
-        <p><code class="parameter-code"> status </code> <code class="parameter-code required"> required </code></p>
-        <p>Der Status des Produktes, entweder „offen“ oder „besorgt“.</p>
 
 
         <br>
@@ -1374,9 +1497,10 @@
         <br>
         <br>
 
-        <h2 class="mb-4 content-block"> <div id="listShoppinglist"> List all Shoppinglists  </div></h2>
+
+        <h2 class="mb-4 content-block"> <div id="listShoppinglist"> List all Recipes  </div></h2>
         <p> <b> METHOD: GET</b></p>
-        <p>Gibt eine Liste aller Einkaufslisten zurück, die erstellt wurden.
+        <p>Gibt eine Liste aller Rezepte zurück, die erstellt wurden.
           
           </p>
         <br>
@@ -1471,7 +1595,7 @@
 
         <!--
         <h2 class="mb-4 content-block"><div id="XXX"> XXX </div></h2>
-        <p class="content-block"><code>XXX</code> Objekte repräsentieren ein XXX in der myFridge-App. Mit der API können Sie Ihre XXX erstellen, löschen und aktualisieren. Sie können sowohl einzelne XXX als auch eine Liste aller Ihrer XXX abrufen.</p>
+        <p class="content-block"><code>XXX</code> Objects repräsentieren ein XXX in der myFridge-App. Mit der API können Sie Ihre XXX erstellen, löschen und aktualisieren. Sie können sowohl einzelne XXX als auch eine Liste aller Ihrer XXX abrufen.</p>
         <h2 class="mb-4"> </h2>
         <table class ="content-light">
           <th> ENDPOINTS </th>
