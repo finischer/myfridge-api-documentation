@@ -978,7 +978,7 @@
         <br>
 
         <h2 class="mb-4 content-block"><div id="allgemeinShoppinglist"> Shoppinglist </div></h2>
-        <p class="content-block"> <code>Shoppinglist</code>-Object repräsentieren eine Einkaufsliste der myFridge-App. Mit der API können Sie Einkaufslisten erstellen, löschen und aktualisieren. Sie können sowohl einzelne Einkaufslisten als auch eine Liste aller Ihrer Einkaufslisten abrufen. Eine leere Einkaufsliste wird bei der Benutzererstellung generiert.</p>
+        <p class="content-block"> <code>Shoppinglist</code>-Objects repräsentieren eine Einkaufsliste der myFridge-App. Mit der API können Sie Einkaufslisten erstellen, löschen und aktualisieren. Sie können sowohl einzelne Einkaufslisten als auch eine Liste aller Ihrer Einkaufslisten abrufen. Eine leere Einkaufsliste wird bei der Benutzererstellung generiert.</p>
         <h2 class="mb-4"> </h2>
         <table class ="content-light">
           <th> ENDPOINTS </th>
@@ -999,7 +999,7 @@
         <br>
         <h2 class="mb-4 content-block"> <div id="shoppinglistObject">The Shoppinglist Object </div></h2>
         <table class ="content-light">
-          <th> THE FRIDGE OBJECT </th>
+          <th> THE SHOPPINGLIST OBJECT </th>
           <tr> <p> <td><code class="inside-code"> { <br> &nbsp;&nbsp;&nbsp; 
                                                     "_id" : "c5816f8e93fc4aa8923385f3b7fddfbd", <br> &nbsp;&nbsp;&nbsp; 
                                                     "bedarf" : [ <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
@@ -1148,23 +1148,65 @@
         <br>
         <br>
 
-        <!-- TODO 
-        <h2 class="mb-4 content-block"> <div id="shoppinglistObject">The Shopinglist Object </div></h2>
+        <h2 class="mb-4 content-block"><div id="allgemeinRecipe"> Recipe </div></h2>
+        <p class="content-block"> <code>Recipe</code>-Objects repräsentieren ein Rezept der myFridge-App. Ein solches Objekt enthält zum einen Variablen, wie den Rezeptnamen, die Zubereitungszeit und einen Schwierigkeitsgrad, zum anderen die Dictionaries „Zutaten“ und „Zubereitung“. Im Dictionary „Zutaten sind alle benötigten Produkte mit Mengenangaben und Einheit gespeichert, in „Zubereitung“ sind die einzelnen Zubereitungsschritte enthalten. Mit der API können Sie Rezepte erstellen, löschen und aktualisieren. Sie können sowohl einzelne Rezepte als auch eine Liste aller Rezepte abrufen. </p>
+        <h2 class="mb-4"> </h2>
         <table class ="content-light">
-          <th> THE FRIDGE OBJECT </th>
+          <th> ENDPOINTS </th>
+          <tr> <p> <td> <div class="get-string endpoint"> GET </div>    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">api/recipes </code> </td></p></tr>
+          <tr> <p> <td> <div class="get-string endpoint"> GET </div>    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">api/recipe/{recipe_id} </code> </td></p></tr>
+          <tr> <p> <td> <div class="post-string endpoint"> POST </div>   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">api/recipe </code> </td></p></tr>
+          <tr> <p> <td> <div class="put-string endpoint"> PUT </div>    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <code class="inside-code">api/recipe </code> </td></p></tr>
+          <tr> <p> <td> <div class="delete-string endpoint"> DELETE </div> &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">api/recipes </code> </td></p></tr>
+          <tr> <p> <td> <div class="delete-string endpoint"> DELETE </div> &nbsp; &nbsp; &nbsp; &nbsp;  <code class="inside-code">api/recipe/{recipe_id}  </code> </td></p></tr>
+
+        </table>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+
+        
+        <h2 class="mb-4 content-block"> <div id="recipeObject">The Recipe Object </div></h2>
+        <table class ="content-light">
+          <th> THE RECIPE OBJECT </th>
           <tr> <p> <td><code class="inside-code"> { <br> &nbsp;&nbsp;&nbsp; 
-                                                    "_id" : "c5816f8e93fc4aa8923385f3b7fddfbd", <br> &nbsp;&nbsp;&nbsp; 
-                                                    "bedarf" : [ <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                    "_id": "6aa7017fccf447eab4ab581eab1ee05b", <br> &nbsp;&nbsp;&nbsp;
+                                                    "bild": "Bilder/Rezepte/frittata.png", <br> &nbsp;&nbsp;&nbsp;
+                                                    "name": "Frittata",<br> &nbsp;&nbsp;&nbsp;
+                                                    "beschreibung": "Die Frittata ist ein italienisches Omelett. Sie wird kalt oder warm als Vorspeise oder Hauptgericht serviert oder in kleineren Stücken zum Aperitif gereicht. Ebenfalls bekannt ist die Frittata in den USA durch italienische Einwanderer, sie wird auch in den New Yorker Delis angeboten. Die Frittata wird in der Pfanne gebacken. Grundlage sind geschlagene Eier, in die je nach Geschmack weitere Zutaten gegeben werden. Häufig werden dabei Gemüse wie Zucchini, Zwiebeln oder Pilze und Kräuter verwendet. Da sich Frittata sehr gut zur Resteverwertung eignet, findet man aber auch Varianten mit Fleisch oder Fisch, z. B. mit Garnelen oder Schinken. Ebenso wie die spanische Tortilla bleibt die Frittata offen, so wie sie aus der Pfanne kommt, sie wird also nicht zusammengeklappt oder umgeschlagen.",<br> &nbsp;&nbsp;&nbsp;
+                                                    "mahlzeit": "Frühstück", <br> &nbsp;&nbsp;&nbsp;
+                                                    "kategorien": "vegetarisch",<br> &nbsp;&nbsp;&nbsp;
+                                                    "schwierigkeitsgrad": "Anfänger",<br> &nbsp;&nbsp;&nbsp;
+                                                    "zubereitungszeit": "25min",<br> &nbsp;&nbsp;&nbsp;
+                                                    "bewertung": "5/5",<br> &nbsp;&nbsp;&nbsp;
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    "zutaten": [ <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
                                                       { <br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
-                                                        "name":  "Paprika", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
-                                                        "menge" : 2, <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
-                                                        "status" : "offen"<br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "produktmenge": 4, <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "einheit": "stueck", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "produktname": "Ei"<br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
                                                       },<br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
                                                       { <br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
-                                                        "name":  "Kürbis", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
-                                                        "menge" : 1, <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
-                                                        "status" : "besorgt"<br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "produktmenge": 30, <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "einheit": "g", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "produktname": "Feta Käse"<br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
                                                       },<br> &nbsp;&nbsp;&nbsp;
+                                                    ],<br> &nbsp;&nbsp;&nbsp;
+
+                                                    "zubereitung": [ <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                      { <br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "1.": "Das Gemüse zerkleinern und andünsten", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "2.": " Den Ofen auf 200 Grad vorheizen", <br> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "3.": " Die Eier mit Milch und Gewürzen vermischen",<br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "4.": " Den Feta Käse und das Gemüse hinzufügen",<br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                        "5.": " alles für 20 min in den Backofen"<br>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
+                                                      } <br> &nbsp;&nbsp;&nbsp;
                                                     ]<br>
                                                   }<br></code></td> </p></tr>
         </table>
@@ -1302,7 +1344,7 @@
         <br>
         <br>
 
-        -->
+        
 
         <h2 class="mb-4 content-block"><div id="allgemeinSearch"> Searchfunction </div></h2>
         <p class="content-block"> Die Suchfunktion ermöglicht es dem Anwender, nach bestimmten Daten zu suchen. Außerdem werden ihm Suchbegriffe vorgeschlagen.</p>
